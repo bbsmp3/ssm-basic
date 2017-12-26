@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hou.ssmbasic.dao.UserDAO">
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="getUserByRybh" resultType="UserDO" parameterType="String">
+		<!-- 具体的sql -->
+		SELECT
+			id,
+			rybh,
+			notes_id,
+			employee_id,
+			mail,
+			company,
+			mobile,
+			display_name,
+			department,
+			post_office_pox,
+			password_218,
+			authentication_type,
+			is_valid,
+			is_locked,
+			gmt_create,
+			gmt_modified
+		FROM
+			ua_user
+		WHERE
+			rybh = #{rybh}
+	</select>
+	
+	<select id="getUserByNotesId" resultType="UserDO" parameterType="String">
+		<!-- 具体的sql -->
+		SELECT
+			id,
+			rybh,
+			notes_id,
+			employee_id,
+			mail,
+			company,
+			mobile,
+			display_name,
+			department,
+			post_office_pox,
+			password_218,
+			authentication_type,
+			is_valid,
+			is_locked,
+			gmt_create,
+			gmt_modified
+		FROM
+			ua_user
+		WHERE
+			notes_id = #{notesId}
+	</select>
+	
+</mapper>
